@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8eee9">
+<title>إلى رحمتي، بكل ما في قلبي</title>
+<style>
+:root{
+  --cream:#fbf4ed;--paper:#fffaf6;--rose:#d98f98;--deep:#875d63;
+  --ink:#594448;--muted:#987e7d;--line:#efdcd7;--blush:#f5e2df;
+  --shadow:0 18px 50px rgba(111,73,77,.12)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:radial-gradient(circle at 15% 8%,#f7e4e1 0,transparent 28%),linear-gradient(145deg,#fbf5ee,#f8ece9 55%,#f7eee5);
+  color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.9;overflow-x:hidden
+}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(920px,92%);margin:auto}
+.hero{min-height:100svh;display:grid;place-items:center;padding:36px 0;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"✿";position:absolute;color:#dca6a3;opacity:.22;font-size:130px;pointer-events:none}
+.hero:before{top:5%;right:4%;transform:rotate(-18deg)}.hero:after{bottom:3%;left:5%;font-size:170px}
+.hero-card{width:min(620px,100%);text-align:center;padding:clamp(28px,7vw,62px) 22px;background:rgba(255,250,246,.84);border:1px solid #f0ded8;border-radius:34px;box-shadow:var(--shadow);position:relative}
+.eyebrow{letter-spacing:2px;color:var(--muted);font-size:12px}
+h1{font-size:clamp(38px,9vw,66px);font-weight:500;color:var(--deep);margin:8px 0}
+.subtitle{color:#987d7b;font-size:16px;margin:0 auto 24px;max-width:430px}
+.flower{font-size:38px;display:block;margin-bottom:8px}
+.btn{border:0;border-radius:999px;padding:12px 25px;background:var(--deep);color:white;box-shadow:0 8px 20px #875d6330;transition:.2s}
+.btn:hover{transform:translateY(-2px);background:#70494f}
+.btn.light{background:#f2dfdc;color:var(--deep);box-shadow:none}
+main{padding:12px 0 70px}
+section{margin:28px auto;padding:clamp(22px,5vw,38px);background:rgba(255,250,246,.82);border:1px solid var(--line);border-radius:28px;box-shadow:0 10px 30px rgba(111,73,77,.06)}
+.section-head{text-align:center;margin-bottom:22px}
+.kicker{color:var(--rose);font-size:13px}
+h2{font-size:clamp(25px,5vw,34px);font-weight:500;color:var(--deep);margin:3px 0}
+.intro{color:var(--muted);font-size:14px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.envelope{background:linear-gradient(145deg,#fff7f2,#f6e5e1);border:1px solid #efd8d4;border-radius:18px;padding:18px 14px;text-align:center;color:var(--deep);min-height:130px}
+.envelope .symbol{font-size:29px;display:block}
+.envelope small{display:block;color:var(--muted);margin-top:4px}
+.reveal{display:none;margin-top:12px;padding:13px;background:#fffaf7;border-radius:12px;text-align:right;font-size:14px;color:var(--ink)}
+.envelope.open .reveal{display:block}
+.letter{background:#fffdf9;border:1px solid #f0e5db;border-radius:16px;padding:22px;margin:14px 0;position:relative}
+.letter:before{content:"";position:absolute;top:0;right:20px;width:42px;height:3px;background:#dba3a1;border-radius:4px}
+.letter h3{color:var(--deep);font-weight:500;margin:0 0 8px}
+.letter p{margin:0;color:#705b5b}
+.reasons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.reason{padding:14px;border-radius:15px;background:#f9eeea;border:1px solid #f0dfda}
+.reason b{display:block;color:var(--deep);font-size:14px}
+.reason span{font-size:13px;color:#826c6b}
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:20px 0}
+.countbox{background:#f7e9e5;border-radius:15px;padding:15px 5px;text-align:center}
+.countbox strong{font-size:clamp(22px,6vw,34px);color:var(--deep);display:block;direction:ltr}
+.countbox small{color:var(--muted);font-size:12px}
+.date-note{font-size:12px;color:var(--muted);text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.photo{aspect-ratio:4/5;border-radius:17px;background:linear-gradient(145deg,#f6e4df,#fff8f2);border:1px dashed #dcb7b2;display:grid;place-items:center;text-align:center;padding:12px;overflow:hidden;color:var(--muted);font-size:13px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.final{text-align:center;background:linear-gradient(145deg,#fff8f3,#f5e2df)}
+.final .big-heart{font-size:42px;color:#cf8992}
+.signature{font-family:Georgia,serif;font-size:20px;color:var(--deep);margin-top:18px}
+footer{text-align:center;color:#a58d89;font-size:12px;padding:20px}
+.hidden{display:none!important}
+.modal-back{position:fixed;inset:0;background:#3e292b88;display:grid;place-items:center;padding:18px;z-index:10}
+.modal{width:min(520px,100%);background:var(--paper);padding:27px;border-radius:24px;text-align:center;box-shadow:var(--shadow)}
+.modal p{color:#705b5b}
+.close{margin-top:10px}
+@media(max-width:540px){.grid,.reasons,.gallery{grid-template-columns:1fr 1fr}.counter{gap:6px}.countbox{padding:12px 2px}.countbox small{font-size:10px}}
+@media(prefers-reduced-motion:no-preference){.hero-card{animation:rise .9s ease both}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="hero-card">
+    <span class="flower">🌷</span>
+    <div class="eyebrow">رسالة صغيرة من قلبٍ يحبك</div>
+    <h1>إلى رحمتي</h1>
+    <p class="subtitle">هناك حكاية لا تشبه الحكايات، وددتُ أن أترك لكِ منها شيئًا تقرئينه كلما اشتقتِ إلى كلماتي.</p>
+    <button class="btn" id="startBtn">افتحي رسالتي ♡</button>
+    <p class="eyebrow" style="margin-top:20px">صُنعت بكل الحب، من محمود</p>
+  </div>
+</header>
+
+<main class="wrap hidden" id="content">
+  <section>
+    <div class="section-head"><div class="kicker">البداية من هنا</div><h2>أهلًا بكِ في حكايتنا</h2><p class="intro">خذي وقتكِ… فكل تفصيلة هنا كُتبت لكِ وحدكِ.</p></div>
+    <div class="letter"><h3>قبل أن تبدئي…</h3><p>لم أعرف كيف أختصر ما أشعر به في هدية واحدة، فقررت أن أجمع لكِ بعضًا من قلبي في هذه الصفحات. افتحي الأظرف، واقرئي الرسائل، واتركي ابتسامتكِ تمرّ على كل تفصيلة.</p></div>
+  </section>
+
+  <section>
+    <div class="section-head"><div class="kicker">أشياء خبأتها لكِ</div><h2>أظرف صغيرة من قلبي</h2><p class="intro">اضغطي على كل ظرف لتكتشفي ما بداخله.</p></div>
+    <div class="grid" id="envelopes">
+      <button class="envelope"><span class="symbol">✉️</span>الظرف الأول<small>كلمة لكِ</small><div class="reveal">وجودكِ في حياتي ليس تفصيلة عابرة؛ أنتِ من الأشياء التي تجعل الأيام أحنّ، والحديث أجمل، والقلب أكثر طمأنينة.</div></button>
+      <button class="envelope"><span class="symbol">💌</span>الظرف الثاني<small>شيء أتمنى أن تعرفيه</small><div class="reveal">أحب أن أراكِ سعيدة، وأن أكون سببًا ولو صغيرًا في ابتسامتكِ. لا أريد للحب أن يكون كلامًا فقط، بل اهتمامًا يظهر في التفاصيل.</div></button>
+      <button class="envelope"><span class="symbol">🌷</span>الظرف الثالث<small>دعوة من قلبي</small><div class="reveal">أتمنى أن تحمل لكِ الأيام من اللطف بقدر ما تحملين إلى قلبي من فرح، وأن تجدي دائمًا ما يطمئن روحكِ.</div></button>
+      <button class="envelope"><span class="symbol">🤍</span>الظرف الرابع<small>اعتراف صغير</small><div class="reveal">أحيانًا تعجز الكلمات عن وصف مكانتكِ، لكن عجزها لا يعني قلة ما أشعر به؛ بل يعني أن في القلب أشياء أكبر من أن تُقال دفعة واحدة.</div></button>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><div class="kicker">رسائل لم تُكتب على عجل</div><h2>خطابات إليكِ</h2></div>
+    <article class="letter"><h3>إلى رحمتي، حين تقرئينني</h3><p>أكتب إليكِ لأن بعض المشاعر لا يكفيها حديث عابر. أحب فيكِ حضوركِ، وطريقتكِ التي تترك أثرًا في يومي، وأحب أن بيننا حكاية تستحق أن نعتني بها. لستُ أبحث عن كلمات مثالية؛ أريد فقط أن يصلكِ صدق ما في قلبي.</p></article>
+    <article class="letter"><h3>عن المسافة</h3><p>قد تفصل بيننا الأماكن، وقد لا تجمعنا اللحظة التي نتمناها، لكن المسافة لا تمنعني من أن أشارككِ يومي، وأسأل عنكِ، وأصنع لكِ شيئًا صغيرًا يذكّركِ بأنكِ حاضرة في بالي. إلى أن تجمعنا الأيام، ستظل كلماتي جسرًا صغيرًا بين قلبينا.</p></article>
+  </section>
+
+  <section>
+    <div class="section-head"><div class="kicker">عشرة أشياء أحبها</div><h2>أسباب كثيرة… وهذه عشرة منها</h2><p class="intro">يمكنك تعديلها لتصبح أقرب إلى تفاصيلها الحقيقية.</p></div>
+    <div class="reasons">
+      <div class="reason"><b>01 — روحكِ</b><span>لأن فيكِ شيئًا يجعل حضوركِ مختلفًا.</span></div>
+      <div class="reason"><b>02 — ضحكتكِ</b><span>لأنها قادرة على تغيير شكل يوم كامل.</span></div>
+      <div class="reason"><b>03 — حديثكِ</b><span>لأنني لا أملّ من التفاصيل الصغيرة معكِ.</span></div>
+      <div class="reason"><b>04 — رقتكِ</b><span>لأن اللطف فيكِ يصل دون ضجيج.</span></div>
+      <div class="reason"><b>05 — عفويتكِ</b><span>لأن أجمل اللحظات تأتي منكِ بلا ترتيب.</span></div>
+      <div class="reason"><b>06 — اختلافكِ</b><span>لأنكِ لا تشبهين أحدًا في عيني.</span></div>
+      <div class="reason"><b>07 — اهتمامكِ</b><span>لأن التفاصيل الصغيرة منكِ تعني الكثير.</span></div>
+      <div class="reason"><b>08 — وجودكِ</b><span>لأن قربكِ، ولو بالكلام، يهوّن المسافات.</span></div>
+      <div class="reason"><b>09 — أحلامكِ</b><span>لأنني أحب أن أراكِ تكبرين وتحققين ما تتمنين.</span></div>
+      <div class="reason"><b>10 — لأنكِ أنتِ</b><span>وهذا وحده سبب لا أحتاج بعده إلى أسباب.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><div class="kicker">منذ بدأت الحكاية</div><h2>والوقت يحمل اسمكِ</h2><p class="intro">كل يوم يمرّ يضيف سطرًا جديدًا إلى الحكاية.</p></div>
+    <div class="counter">
+      <div class="countbox"><strong id="days">—</strong><small>يوم</small></div>
+      <div class="countbox"><strong id="hours">—</strong><small>ساعة</small></div>
+      <div class="countbox"><strong id="minutes">—</strong><small>دقيقة</small></div>
+      <div class="countbox"><strong id="seconds">—</strong><small>ثانية</small></div>
+    </div>
+    <p class="date-note" id="dateNote">سيظهر العداد بعد إضافة تاريخ بداية الحكاية في إعدادات الصفحة.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><div class="kicker">لحظات نحتفظ بها</div><h2>معرض الذكريات</h2><p class="intro">استبدلوا هذه المساحات بصوركم وذكرياتكم المفضلة.</p></div>
+    <div class="gallery">
+      <div class="photo">🌸<br>مكان صورتكما الأولى</div>
+      <div class="photo">🤍<br>ذكرى لا تُنسى</div>
+      <div class="photo">📷<br>صورة تبتسمان فيها</div>
+      <div class="photo">✨<br>تفصيلة تخصكما وحدكما</div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="big-heart">♡</div><div class="kicker">وهنا تنتهي الصفحات… لا الحكاية</div>
+    <h2>إلى رحمتي، مرة أخرى</h2>
+    <p>لو كان بإمكاني أن أضع شعوري كله بين يديكِ لفعلت، لكنني جمعت لكِ هنا بعضًا منه. أتمنى أن تصلكِ هذه المفاجأة كما أردتها: دافئة، صادقة، ومليئة بكِ.</p>
+    <p>شكرًا لأنكِ أنتِ، ولأن وجودكِ صار جزءًا جميلًا من حكايتي. أتمنى أن تظل الأيام أحنّ علينا، وأن نكتب معًا ذكريات أجمل من كل ما تخيلناه.</p>
+    <div class="signature">الكاتب: محمود فتحي المنسي</div>
+    <p style="color:var(--rose);margin-top:14px">أحبكِ… بكل ما لا تكفيه الكلمات. ♡</p>
+  </section>
+  <footer>صُنعت بحبّ، لتصل إلى قلب واحد: رحمتي 🌷</footer>
+</main>
+
+<script>
+/* إعداد مهم: غيّر التاريخ إلى تاريخ بداية حبكما بصيغة YYYY-MM-DD.
+   مثال توضيحي فقط: "2025-06-15" — لا تترك المثال إن لم يكن تاريخكما الحقيقي. */
+const LOVE_START_DATE = "YYYY-MM-DD";
+
+document.getElementById("startBtn").addEventListener("click",()=>{
+  document.getElementById("content").classList.remove("hidden");
+  document.getElementById("content").scrollIntoView({behavior:"smooth"});
+});
+document.querySelectorAll(".envelope").forEach(btn=>{
+  btn.addEventListener("click",()=>btn.classList.toggle("open"));
+});
+
+function updateCounter(){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(LOVE_START_DATE)){
+    document.getElementById("dateNote").textContent="أضيفي/أضف تاريخ بداية الحكاية في سطر LOVE_START_DATE داخل الكود ليعمل العداد.";
+    return;
+  }
+  const start=new Date(LOVE_START_DATE+"T00:00:00");
+  const now=new Date();
+  if(Number.isNaN(start.getTime())||start>now){
+    document.getElementById("dateNote").textContent="تأكد من كتابة تاريخ صحيح، وأنه ليس في المستقبل.";
+    return;
+  }
+  let seconds=Math.floor((now-start)/1000);
+  const days=Math.floor(seconds/86400); seconds%=86400;
+  const hours=Math.floor(seconds/3600); seconds%=3600;
+  const minutes=Math.floor(seconds/60); seconds%=60;
+  document.getElementById("days").textContent=days.toLocaleString("ar-EG");
+  document.getElementById("hours").textContent=hours.toLocaleString("ar-EG");
+  document.getElementById("minutes").textContent=minutes.toLocaleString("ar-EG");
+  document.getElementById("seconds").textContent=seconds.toLocaleString("ar-EG");
+  document.getElementById("dateNote").textContent="منذ "+LOVE_START_DATE;
+}
+updateCounter();setInterval(updateCounter,1000);
+</script>
+</body>
+</html>

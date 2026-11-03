@@ -1,1 +1,1 @@
-indix
+indix.html
